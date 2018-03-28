@@ -21,3 +21,4 @@ ada dua section dari data yang di ambil:
     print(test.parse_table())
     ```
   
+TODO: Record in csv for all stock listed
