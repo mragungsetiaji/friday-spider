@@ -35,7 +35,7 @@ class Ipotgo(object):
         price = price.findNext("td")
         return price.text.strip()
 
-    ## Bot Orderbook Section (biddoffer)
+    ## Bot Orderbook Section (biddoffer) 
     def bot_orderbook(self):
         return self.soup.find("table", attrs={"class":"table table-orderbook bidoffer noborder nm"})
 
