@@ -3,7 +3,7 @@ import scrapy
 
 class BrokerSummaryItem(scrapy.Item):
 
-    _id = scrapy.Field()
+    id = scrapy.Field()
     date = scrapy.Field()
     emiten = scrapy.Field()
     type = scrapy.Field()

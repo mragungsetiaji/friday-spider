@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import scrapy
 import json
+import loguru
 
 from datetime import date, timedelta
 from scrapy.utils.project import get_project_settings
@@ -9,10 +10,10 @@ from items.broker_summary import BrokerSummaryItem
 class BrokerSummarySpider(scrapy.Spider):
     
     name = 'broker_summary_spider'
-    number_of_day = 1
+    number_of_day = 7
     traders = ["all", "f", "d"]
     board='all'
-    code = 'ANTM'
+    code = 'ASII'
 
     def get_date(self):
 
@@ -38,6 +39,7 @@ class BrokerSummarySpider(scrapy.Spider):
                     self.board
                 )
 
+                print("Scraping data: {} for date:{}".format(self.code, datex))
                 yield scrapy.Request(url, 
                                     callback=self.parse, 
                                     meta={'date':datex})
@@ -60,7 +62,7 @@ class BrokerSummarySpider(scrapy.Spider):
                     average=row.xpath('td[9]//text()').extract_first()
 
                 item = BrokerSummaryItem(
-                    _id="{}-{}-{}-{}".format(
+                    id="{}-{}-{}-{}".format(
                         self.code,
                         response.meta['date'].strftime("%Y-%m-%d"),
                         transaction_type,

@@ -44,11 +44,11 @@ DOWNLOADER_MIDDLEWARES = {
 
 LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
 LOG_FILE = os.getenv("LOG_FILE") if os.getenv("LOG_FILE", "") else None
-'''
+
 ITEM_PIPELINES = {
    'pipelines.mongodb.MongoPipeline': 300,
 }
-'''
+
 MYSQL_HOST = os.getenv("MYSQL_HOST", "127.0.0.1")
 MYSQL_PORT = int(os.getenv("MYSQL_PORT", "3306"))
 MYSQL_USERNAME = os.getenv("MYSQL_USERNAME", "root")
@@ -94,3 +94,6 @@ MONGO_DATABASE = os.getenv("MONGO_DATABASE")
 
 # Endpoint
 BROKERSUMMARY_ENDPOINT_URL = os.getenv("BROKERSUMMARY_ENDPOINT_URL")
+
+FEED_FORMAT = "csv"  # save results to CSV, JSON or XML
+FEED_URI = "spider.csv"
