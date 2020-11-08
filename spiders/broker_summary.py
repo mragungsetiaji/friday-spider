@@ -10,10 +10,10 @@ from items.broker_summary import BrokerSummaryItem
 class BrokerSummarySpider(scrapy.Spider):
     
     name = 'broker_summary_spider'
-    number_of_day = 7
+    number_of_day = 300
     traders = ["all", "f", "d"]
     board='all'
-    code = 'ASII'
+    code = 'SCMA'
 
     def get_date(self):
 

@@ -96,4 +96,4 @@ MONGO_DATABASE = os.getenv("MONGO_DATABASE")
 BROKERSUMMARY_ENDPOINT_URL = os.getenv("BROKERSUMMARY_ENDPOINT_URL")
 
 FEED_FORMAT = "csv"  # save results to CSV, JSON or XML
-FEED_URI = "spider.csv"
+FEED_URI = "scma.csv"
