@@ -13,7 +13,7 @@ class BrokerSummarySpider(scrapy.Spider):
     number_of_day = 300
     traders = ["all", "f", "d"]
     board='all'
-    code = 'SCMA'
+    code = 'ASII'
 
     def get_date(self):
 
